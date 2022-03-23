@@ -29,76 +29,57 @@ Question
 </div>
 </div><br>
 <?php
-$answer1 = array('<input type="radio" name="q1" id="o1" value="1" onClick="redirect()"/>   <span id="ans1">test</span>','<input type="radio" name="q1" id="o2" value="2" onClick="redirect()"/>  <span id="ans2">test1</span>','<input type="radio" name="q1" id="o3" value="3" onClick="redirect()"/>  <span id="ans3">test2</span>
-','<input type="radio" name="q1" id="o4" value="4" onClick="redirect()"/>  <span id="ans4">test3</span>');
+$answer1 = array('<span id="ans1"><input type="radio" name="q1" id="o1" value="1" onClick="redirect()"/><span> test</span>','<span id="ans2"><input type="radio" name="q1" id="o2" value="2" onClick="redirect()"/>  <span>test1</span>','<span id="ans3">
+<input type="radio" name="q1" id="o3" value="3" onClick="redirect()"/>  <span>test2</span>
+','<span id="ans4"><input type="radio" name="q1" id="o4" value="4" onClick="redirect()"/>  <span>test3</span>');
 shuffle($answer1);
 
-$answer2 = array('<input type="radio" name="q1" id="o11" value="1" onClick="redirect2()"/>  <span id="ans11">test</span>','<input type="radio" name="q1" id="o12" value="2" onClick="redirect2()"/>  <span id="ans12">test1</span>
-','<input type="radio" name="q1" id="o13" value="3" onClick="redirect2()"/>  <span id="ans13">test3</span>','<input type="radio" name="q1" id="o14" value="4" onClick="redirect2()"/>  <span id="ans14">test4</span>');
+$answer2 = array('<span id="ans11"><input type="radio" name="q1" id="o11" value="1" onClick="redirect2()"/>  <span>test</span>','<span id="ans12"><input type="radio" name="q1" id="o12" value="2" onClick="redirect2()"/>  <span>test1</span>
+','<span id="ans13"><input type="radio" name="q1" id="o13" value="3" onClick="redirect2()"/>  <span>test3</span>','<span id="ans14"><input type="radio" name="q1" id="o14" value="4" onClick="redirect2()"/>  <span>test4</span>');
 shuffle($answer2);
 
 
-$answer3 = array('<input type="radio" name="q1" id="o21" value="1" onClick="redirect3()"/>  <span id="ans21">test</span>','<input type="radio" name="q1" id="o22" value="2" onClick="redirect3()"/>  <span id="ans22">test1</span>','<input type="radio" name="q1" id="o23" value="3" onClick="redirect3()"/>  <span id="ans23">test12</span>','<input type="radio" name="q1" id="o24" value="4" onClick="redirect3()"/>  <span id="ans24">test2</span>');
+$answer3 = array('<span id="ans21"><input type="radio" name="q1" id="o21" value="1" onClick="redirect3()"/>  <span>test</span>','<span id="ans22"><input type="radio" name="q1" id="o22" value="2" onClick="redirect3()"/>  <span>test1</span>','<span id="ans23"><input type="radio" name="q1" id="o23" value="3" onClick="redirect3()"/>  <span>test12</span>','<span id="ans24"><input type="radio" name="q1" id="o24" value="4" onClick="redirect3()"/>  <span>test2</span>');
 shuffle($answer3);
 
 
-$answer4 = array('<input type="radio" name="q1" id="o31" value="1" onClick="redirect4()"/>  <span id="ans31">test</span>','<input type="radio" name="q1" id="o32" value="2" onClick="redirect4()"/>  <span id="ans32">test1</span>','<input type="radio" name="q1" id="o33" value="3" onClick="redirect4()"/>  <span id="ans33">test2</span>','<input type="radio" name="q1" id="o34" value="4" onClick="redirect4()"/>  <span id="ans34">test3</span>');
+$answer4 = array('<span id="ans31"><input type="radio" name="q1" id="o31" value="1" onClick="redirect4()"/>  <span>test</span>','<span id="ans32"><input type="radio" name="q1" id="o32" value="2" onClick="redirect4()"/>  <span>test1</span>','<span id="ans33"><input type="radio" name="q1" id="o33" value="3" onClick="redirect4()"/>  <span>test2</span>','<span id="ans34"><input type="radio" name="q1" id="o34" value="4" onClick="redirect4()"/>  <span>test3</span>');
 shuffle($answer4);
 
 
-$answer5 = array('<input type="radio" name="q1" id="o41" value="1" onClick="redirect5()"/>  <span id="ans41">test</span>','<input type="radio" name="q1" id="o42" value="2" onClick="redirect5()"/>  <span id="ans42">test3</span>','<input type="radio" name="q1" id="o43" value="3" onClick="redirect5()"/>  <span id="ans43">test31</span>','<input type="radio" name="q1" id="o44" value="4" onClick="redirect5()"/>  <span id="ans44">test32</span>');
+$answer5 = array('<span id="ans41"><input type="radio" name="q1" id="o41" value="1" onClick="redirect5()"/>  <span>test</span>','<span id="ans42"><input type="radio" name="q1" id="o42" value="2" onClick="redirect5()"/>  <span>test3</span>','<span id="ans43"><input type="radio" name="q1" id="o43" value="3" onClick="redirect5()"/>  <span>test31</span>','<span id="ans44"><input type="radio" name="q1" id="o44" value="4" onClick="redirect5()"/>  <span>test32</span>');
 shuffle($answer5);
 
 $question = array('<div class="form-group"> 
-<h3>Ques1 : How are you 1?</h3></div><span><br><br>
+<h3>Ques1 : How are you 1?</h3></div><br><br>
 '.$answer1[0].'</span><br><br>
-<span>
 '.$answer1[1].'</span><br><br>
-<span>
 '.$answer1[2].'</span><br><br>
-<span>
 '.$answer1[3].'</span><br><br>
-<span>
 ','<div class="form-group"> 
-<h3>Ques2 : How are you 2?</h3></div><span><br><br>
+<h3>Ques2 : How are you 2?</h3></div><br><br>
 '.$answer2[0].'</span><br><br>
-<span>
 '.$answer2[1].'</span><br><br>
-<span>
 '.$answer2[2].'</span><br><br>
-<span>
 '.$answer2[3].'</span><br><br>
-<span>
 ','<div class="form-group"> 
-<h3>Ques3 : How are you 3?</h3></div><span><br><br>
+<h3>Ques3 : How are you 3?</h3></div><br><br>
 '.$answer3[0].'</span><br><br>
-<span>
 '.$answer3[1].'</span><br><br>
-<span>
 '.$answer3[2].'</span><br><br>
-<span>
 '.$answer3[3].'</span><br><br>
-<span>
 ','<div class="form-group"> 
-<h3>Ques4 : How are you 4?</h3></div><span><br><br>
+<h3>Ques4 : How are you 4?</h3></div><br><br>
 '.$answer4[0].'</span><br><br>
-<span>
 '.$answer4[1].'</span><br><br>
-<span>
 '.$answer4[2].'</span><br><br>
-<span>
 '.$answer4[3].'</span><br><br>
-<span>
 ','<div class="form-group"> 
-<h3>Ques5 : How are you 5?</h3></div><span><br><br>
+<h3>Ques5 : How are you 5?</h3></div><br><br>
 '.$answer5[0].'</span><br><br>
-<span>
 '.$answer5[1].'</span><br><br>
-<span>
 '.$answer5[2].'</span><br><br>
-<span>
 '.$answer5[3].'</span><br><br>
-<span>
 ');
 if(isset($_GET['ret'])){
 shuffle($question);
@@ -134,7 +115,8 @@ flag=+flag+1;
 
 if(r=='null'){ r=0;}
 const res=+r+1;
-document.getElementById("ans1").style.color = 'green';
+document.getElementById("ans1").style.backgroundColor = 'green';
+document.getElementById("ans1").style.color = 'white';
 setTimeout(function() {
 if(flag==5){
 window.location.href = 'result.php?r=' + res;
@@ -152,13 +134,16 @@ if(flag=='null' || flag==''){ flag=0;}
 flag=+flag+1;
 
 if(document.getElementById("o2").checked == true){
-document.getElementById("ans2").style.color = 'red';
+document.getElementById("ans2").style.backgroundColor = 'red';
+document.getElementById("ans2").style.color = 'white';
 }
 if(document.getElementById("o3").checked == true){
-document.getElementById("ans3").style.color = 'red';
+document.getElementById("ans3").style.backgroundColor = 'red';
+document.getElementById("ans3").style.color = 'white';
 }
 if(document.getElementById("o4").checked == true){
-document.getElementById("ans4").style.color = 'red';
+document.getElementById("ans4").style.backgroundColor = 'red';
+document.getElementById("ans4").style.color = 'white';
 }
 setTimeout(function() {
 if(flag==5){
@@ -184,7 +169,8 @@ flag=+flag+1;
 
 if(r=='null'){ r=0;}
 const res=+r+1;
-document.getElementById("ans11").style.color = 'green';
+document.getElementById("ans11").style.backgroundColor = 'green';
+document.getElementById("ans11").style.color = 'white';
 setTimeout(function() {
 if(flag==5){
 window.location.href = 'result.php?r=' + res;
@@ -202,13 +188,16 @@ if(flag=='null' || flag==''){ flag=0;}
 flag=+flag+1;
 
 if(document.getElementById("o12").checked == true){
-document.getElementById("ans12").style.color = 'red';
+document.getElementById("ans12").style.backgroundColor = 'red';
+document.getElementById("ans12").style.color = 'white';
 }
 if(document.getElementById("o13").checked == true){
-document.getElementById("ans13").style.color = 'red';
+document.getElementById("ans13").style.backgroundColor = 'red';
+document.getElementById("ans13").style.color = 'white';
 }
 if(document.getElementById("o14").checked == true){
-document.getElementById("ans14").style.color = 'red';
+document.getElementById("ans14").style.backgroundColor = 'red';
+document.getElementById("ans14").style.color = 'white';
 }
 
 setTimeout(function() {
@@ -234,7 +223,8 @@ flag=+flag+1;
 
 if(r=='null'){ r=0;}
 const res=+r+1;
-document.getElementById("ans21").style.color = 'green';
+document.getElementById("ans21").style.backgroundColor = 'green';
+document.getElementById("ans21").style.color = 'white';
 setTimeout(function() {
 if(flag==5){
 window.location.href = 'result.php?r=' + res;
@@ -252,13 +242,16 @@ if(flag=='null' || flag==''){ flag=0;}
 flag=+flag+1;
 
 if(document.getElementById("o22").checked == true){
-document.getElementById("ans22").style.color = 'red';
+document.getElementById("ans22").style.backgroundColor = 'red';
+document.getElementById("ans22").style.color = 'white';
 }
 if(document.getElementById("o23").checked == true){
-document.getElementById("ans23").style.color = 'red';
+document.getElementById("ans23").style.backgroundColor = 'red';
+document.getElementById("ans23").style.color = 'white';
 }
 if(document.getElementById("o24").checked == true){
-document.getElementById("ans24").style.color = 'red';
+document.getElementById("ans24").style.backgroundColor = 'red';
+document.getElementById("ans24").style.color = 'white';
 }
 setTimeout(function() {
 if(flag==5){
@@ -285,7 +278,8 @@ flag=+flag+1;
 
 if(r=='null'){ r=0;}
 const res=+r+1;
-document.getElementById("ans31").style.color = 'green';
+document.getElementById("ans31").style.backgroundColor = 'green';
+document.getElementById("ans31").style.color = 'white';
 setTimeout(function() {
 if(flag==5){
 window.location.href = 'result.php?r=' + res;
@@ -302,13 +296,16 @@ if(flag=='null' || flag==''){ flag=0;}
 flag=+flag+1;
 
 if(document.getElementById("o32").checked == true){
-document.getElementById("ans32").style.color = 'red';
+document.getElementById("ans32").style.backgroundColor = 'red';
+document.getElementById("ans32").style.color = 'white';
 }
 if(document.getElementById("o33").checked == true){
-document.getElementById("ans33").style.color = 'red';
+document.getElementById("ans33").style.backgroundColor = 'red';
+document.getElementById("ans33").style.color = 'white';
 }
 if(document.getElementById("o34").checked == true){
-document.getElementById("ans34").style.color = 'red';
+document.getElementById("ans34").style.backgroundColor = 'red';
+document.getElementById("ans34").style.color = 'white';
 }
 setTimeout(function() {
 if(flag==5){
@@ -335,7 +332,8 @@ flag=+flag+1;
 
 if(r=='null'){ r=0;}
 const res=+r+1;
-document.getElementById("ans41").style.color = 'green';
+document.getElementById("ans41").style.backgroundColor = 'green';
+document.getElementById("ans41").style.color = 'white';
 setTimeout(function() {
 
 if(flag==5){
@@ -353,13 +351,16 @@ if(flag=='null' || flag==''){ flag=0;}
 flag=+flag+1;
 
 if(document.getElementById("o42").checked == true){
-document.getElementById("ans42").style.color = 'red';
+document.getElementById("ans42").style.backgroundColor = 'red';
+document.getElementById("ans42").style.color = 'white';
 }
 if(document.getElementById("o43").checked == true){
-document.getElementById("ans43").style.color = 'red';
+document.getElementById("ans43").style.backgroundColor = 'red';
+document.getElementById("ans43").style.color = 'white';
 }
 if(document.getElementById("o44").checked == true){
-document.getElementById("ans44").style.color = 'red';
+document.getElementById("ans44").style.backgroundColor = 'red';
+document.getElementById("ans44").style.color = 'white';
 }
 setTimeout(function() {
 if(flag==5){
