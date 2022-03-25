@@ -16,6 +16,9 @@ session_start();
 $clientid = mysqli_insert_id($conn);
 $_SESSION['loginUserEmail'] = 	$val['useremail'];
 session_regenerate_id(true);
+if($_SESSION['loginUserEmail']=='admin@gmail.com'){
+echo "<script>window.open('admin.php','_self')</script>";
+}
 if(isset($_SESSION['loginUserEmail'])){
 echo "<script>window.open('dashboard.php','_self')</script>";
 }
@@ -56,5 +59,51 @@ echo "<script>window.open('dashboard.php','_self')</script>";
 */
 }
 
+
+function student_submit($val)
+{
+$conn = connect();
+$name=mysqli_real_escape_string($conn, $val['student_name']);
+$class=$val['class'];
+$phone_no=$val['phone_no'];
+$gender=$val['gender'];
+$email=mysqli_real_escape_string($conn, $val['email']);
+
+$sql = "INSERT into student(name,class,phone_no,gender,email) values ('".$name."','".$class."','".$phone_no."','".$gender."','".$email."')";
+$query = mysqli_query($conn, $sql);
+if($query=='1'){
+echo "<script>alert('Successfully Submitted')</script>";
+}else{
+echo "<script>alert('Not saved')</script>";
+}
+}
+
+
+
+function gradesubmit($val)
+{
+$conn = connect();
+$id=$val['id'];
+$grade=$val['grade'];
+
+$ss= mysqli_query($conn,"SELECT * FROM `student`");
+while($s=mysqli_fetch_array($ss)){ 
+$idd1=$s['id'];
+$selected1=$val['grade'];  
+$grade=$selected1[$idd1];
+if($grade!=''){
+$sql = "UPDATE `student` SET `grade` = '".$grade."' WHERE `student`.`id` = '".$idd1."';";
+$query = mysqli_query($conn, $sql);
+}
+}
+if($query=='1'){
+echo "<script>alert('Successfully Submitted')</script>";
+}else{
+echo "<script>alert('Not saved')</script>";
+}
+
+//echo "<script>alert('".$grade."')</script>";
+
+}
 
 }

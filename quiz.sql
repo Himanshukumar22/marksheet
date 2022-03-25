@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2022 at 05:07 AM
+-- Generation Time: Mar 25, 2022 at 09:51 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -57,8 +57,19 @@ CREATE TABLE `student` (
   `phone_no` varchar(111) NOT NULL,
   `gender` varchar(111) NOT NULL,
   `email` varchar(111) NOT NULL,
+  `grade` varchar(111) NOT NULL,
   `timestamp` int(11) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `name`, `class`, `phone_no`, `gender`, `email`, `grade`, `timestamp`) VALUES
+(1, 'hemu', '5', '56', 'male', '5sc@csd.sc', 'N', 2147483647),
+(2, 'hemu', '12', '8859705077', 'male', 'mr.hemu22@gmail.com', 'N', 2147483647),
+(3, 'hemu virus', '12', '123123123', 'male', 'hemuvirus@gmail.com', 'V', 2147483647),
+(4, 'hemu kumar', '12', '88597050707', 'male', 'hemu@gmail.com', 'U', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -88,7 +99,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`) VALUES
 (8, 'test user', 'testing@gmail.com', '$2y$10$csdcACSEcwrwcweCEWCWwOT.vEfM4emzED1PWhSCwJvj7VqsuMaAi', '2022-03-22 11:03:05'),
 (9, 'himanshu', 'sccds@dscsdc.sd', '$2y$10$csdcACSEcwrwcweCEWCWwOT.vEfM4emzED1PWhSCwJvj7VqsuMaAi', '2022-03-23 02:24:13'),
 (10, 'himanshu', 'vs@dsacs.csa', '$2y$10$csdcACSEcwrwcweCEWCWwOT.vEfM4emzED1PWhSCwJvj7VqsuMaAi', '2022-03-23 02:25:40'),
-(12, 'csd', 'csdcsd@cds.cds', '$2y$10$csdcACSEcwrwcweCEWCWwOT.vEfM4emzED1PWhSCwJvj7VqsuMaAi', '2022-03-23 02:28:49');
+(12, 'csd', 'csdcsd@cds.cds', '$2y$10$csdcACSEcwrwcweCEWCWwOT.vEfM4emzED1PWhSCwJvj7VqsuMaAi', '2022-03-23 02:28:49'),
+(13, 'admin', 'admin@gmail.com', '$2y$10$csdcACSEcwrwcweCEWCWwOT.vEfM4emzED1PWhSCwJvj7VqsuMaAi', '2022-03-23 04:16:19');
 
 --
 -- Indexes for dumped tables
@@ -126,13 +138,13 @@ ALTER TABLE `quiz_score`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
