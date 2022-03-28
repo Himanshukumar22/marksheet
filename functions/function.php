@@ -5,11 +5,11 @@ class User extends Exception{
 function loginUser($val){
 $conn = connect();
 $val['useremail']=mysqli_real_escape_string($conn, $val['useremail']);
-$query = mysqli_query($conn,"select * from users where email = '".$val['useremail']."'");
+$query = mysqli_query($conn,"select * from student where email = '".$val['useremail']."'");
 $arr = mysqli_fetch_array($query);
 if(mysqli_num_rows($query)<=0){
 $message = "No Record Found";
-} else if(password_verify($val['UserPassword'], $arr['password'])){
+} else if(password_verify($val['UserPassword'], $arr['pass'])){
 
 echo "<script>alert('Login Successful')</script>";
 session_start();
@@ -65,14 +65,30 @@ function student_submit($val)
 $conn = connect();
 $name=mysqli_real_escape_string($conn, $val['student_name']);
 $class=$val['class'];
+$roll_no=$val['roll_no'];
 $phone_no=$val['phone_no'];
-$gender=$val['gender'];
 $email=mysqli_real_escape_string($conn, $val['email']);
 
-$sql = "INSERT into student(name,class,phone_no,gender,email) values ('".$name."','".$class."','".$phone_no."','".$gender."','".$email."')";
+
+$file = rand(1000,100000)."-".$_FILES['profile_img']['name'];
+$file_loc = $_FILES['profile_img']['tmp_name'];
+$file_size = $_FILES['profile_img']['size'];
+$file_type = $_FILES['profile_img']['type'];
+$folder="upload/";
+$new_size = $file_size/1024;  
+$new_file_name = strtolower($file);
+$final_file=str_replace(' ','-',$new_file_name);
+move_uploaded_file($file_loc,$folder.$final_file);
+
+$option=['cost'=>10 ,'salt' => 'csdcACSEcwrwcweCEWCWwcwecwcwWwecwecw'];
+$pass=password_hash($val['UserPassword'], PASSWORD_BCRYPT,$option);
+
+
+$sql = "INSERT into student(name,class,phone_no,email,profile_pic,pass,roll_no) values ('".$name."','".$class."','".$phone_no."','".$email."','".$final_file."','".$pass."','".$roll_no."')";
 $query = mysqli_query($conn, $sql);
 if($query=='1'){
 echo "<script>alert('Successfully Submitted')</script>";
+echo "<script>window.open('index.php','_self')</script>";
 }else{
 echo "<script>alert('Not saved')</script>";
 }

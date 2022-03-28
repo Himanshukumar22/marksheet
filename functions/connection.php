@@ -1,6 +1,6 @@
 <?php
 	function connect(){
-        $con = mysqli_connect('localhost', 'root', '', 'quiz');
+        $con = mysqli_connect('localhost', 'root', '', 'marksheet');
 		return $con;
    }
 ?>

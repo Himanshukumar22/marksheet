@@ -27,8 +27,8 @@ $conn=connect();
 <div class="wrapper-quiz">
 
 <div class="form-group"> <br>
-<center><h3>User Details</h3></center>
-<table class="table" width="100%"><br>
+<center><h3>Marksheet Details</h3></center><br>
+<table class="table" width="100%">
 <?php
 
 $query11 = mysqli_query($conn,"SELECT * FROM `student` where email='$email';");
@@ -52,8 +52,8 @@ while($score = mysqli_fetch_assoc($query11)) {
       <td><b>Photo</b></td>
       <td><img src="upload/<?php echo $score['profile_pic'];?>" height='150' width='150'></td>
    </tr>
-   <tr>
-      <td><h3><a href="marksheet.php" >Marksheet</a></h3>
+<tr>
+      <td><h3><a href="dashboard.php" >Back to Dashboard</a></h3>
 </td>
    </tr>
  
